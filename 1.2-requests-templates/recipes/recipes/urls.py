@@ -19,7 +19,7 @@ from django.urls import path
 from calculator.views import calc_recept
 
 urlpatterns = [
-    path('recipes/<recipe_name>/', calc_recept)
+  path('calculator/<bludo>/', calc_recept)
 
 
 ]

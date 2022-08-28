@@ -21,23 +21,17 @@ DATA = {
 }
 
 
-def calc_recept(request, recipe_name):
+def calc_recept(request, bludo):
     context = None
-    if recipe_name in DATA:
-        data = DATA[recipe_name]
-        servings = request.GET.get('servings')
+    dictionary = dict()
+    servings = request.GET.get('servings', 1)
+    if bludo in DATA:
+        for key, value in DATA[bludo].items():
+            values = value * int(servings)
+            dictionary[key] = values
 
-        if servings:
-            result = dict()
-            for ingredients, quantity in data.items():
-                all_ingredients = quantity * int(servings)
-                result[ingredients] = all_ingredients
-            context = {
-                'recipe': result
-            }
-        else:
-            context = {
-                'recipe': data
-            }
- 
+        context = {
+            'recipe': dictionary
+        }
+
     return render(request, 'calculator/index.html', context)
