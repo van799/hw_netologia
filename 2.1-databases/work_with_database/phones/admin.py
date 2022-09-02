@@ -16,7 +16,7 @@ class PhoneAdmin(admin.ModelAdmin):
     )
 
     list_filter = ('release_date', 'name')
-    prepopulated_fields = {"slug": ("name",)}
+    # prepopulated_fields = {"slug": ("name",)}
 
 
 admin.site.register(Phone, PhoneAdmin)
