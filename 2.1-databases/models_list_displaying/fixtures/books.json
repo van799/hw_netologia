@@ -16,5 +16,23 @@
       "author": "Джордж Оруэл",
       "pub_date": "2016-12-06"
     }
+  },
+  {
+    "model": "books.book",
+    "pk": 3,
+    "fields": {
+      "name": "Гарри потер",
+      "author": "Джон Ролинг",
+      "pub_date": "2017-11-16"
+    }
+  },
+  {
+    "model": "books.book",
+    "pk": 4,
+    "fields": {
+      "name": "Чистый Python",
+      "author": "Бейдер Дэн",
+      "pub_date": "2010-02-13"
+    }
   }
 ]
